@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="「Quatre」の商品一覧のページです。">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&family=Noto+Serif+JP:wght@200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/favicon.ico" sizes="180x180">
+
+
+    <title>Quatre/商品一覧</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header_inner">
+                <h1 class="header_logo header-logo">
+                    <a href="index.html">
+                        <img src="img/quatrelogo.svg" alt="quatrelogo">
+                    </a>
+                </h1>
+                <li class="nav-items_item sp">
+                    <a>
+                        <img src="img/cart.svg" alt="cart" id="cart-icon2">
+                    </a>
+                </li>
+                <nav class="header_nav nav" id="js-nav">
+                    <ul class="nav_items nav-items">
+                        <li class="nav-items_item nav-about">
+                            <a href="about.html">about us</a>
+                        </li>
+                        <li class="nav-items_item nav-product">
+                            <a href="product.html">product</a>
+                        </li>
+                        <li class="nav-items_item nav-cart">
+                            <a>
+                                <img src="img/cart.svg" alt="cart" id="cart-icon">
+                            </a>
+                        </li>
+                        <li class=" nav-items_item nav-contact">
+                            <a href="contact.html">
+                                <img src="img/contact.svg" alt="contact">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header_hamburger hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        <div class="cart">
+            <h3 class="cart-title">カート内</h3>
+            <div class="cart-content">
+
+            </div>
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">0円</div>
+            </div>
+            <button type="button" class="btn-buy">購入手続きへ</button>
+            <img src="img/X.svg" alt="" id="close-cart">
+
+        </div>
+        </header>
+        <main>
+            <section class="innerwrap2">
+                <div class="product-html">
+                    <div id="shampoo">
+                        <h2>product</h2>
+                        <div class="product">
+                            <h3>treatment in shampoo</h3>
+                        </div>
+                        <div class="productinnerwrap">
+                            <div class="productimg">
+                                <img src="img/shampoo.jpg" alt="">
+                            </div>
+                            <div class="productinnerwraptext">
+                                <h4>本体400ml<span>2500円</h4>
+                                <h5>濃密な泡でやさしく・しっかりと汚れを<br>
+                                    包み込んで落とす。<br>
+                                    ハチミツ（保湿成分）が配合されていて<br>
+                                    毛先までしっとりとしたまとまる髪に。</h5>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="item">
+                                <img src="img/春シャン.jpeg" alt="春シャン" class="product-img">
+                                <div class="product-title">
+                                    <p>トリートメントイン<br>シャンプー
+                                        <span class="season">春</span>
+                                        <span class="aroma">ラベンダー&スイートオレンジ</span>
+                                    </p>
+                                </div>
+                                <span class="price">2500円</span>
+                                <button class="button add-cart">
+                                    カートに入れる
+                                </button>
+                            </div>
+                            <div class="item">
+                                <img src="img/夏シャン.jpeg" alt="夏シャン" class="product-img">
+                                <div class="product-title">
+                                    <p>トリートメントイン<br>シャンプー
+                                        <span class="season">夏</span>
+                                        <span class="aroma">ペパーミント&ローズマリー</span>
+                                    </p>
+                                </div>
+                                <span class="price">2500円</span>
+                                <button class="button add-cart">
+                                    カートに入れる
+                                </button>
+                            </div>
+                            <div class="item">
+                                <img src="img/秋シャン.jpeg" alt="秋シャン" class="product-img">
+                                <div class="product-title">
+                                    <div class="product-title">
+                                        <p>トリートメントイン<br>シャンプー
+                                            <span class="season">秋</span>
+                                            <span class="aroma">ベルガモット&カモミール</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="price">2500円</span>
+                                <button class="button add-cart">
+                                    カートに入れる
+                                </button>
+                            </div>
+                            <div class="item">
+                                <img src="img/冬シャン.jpeg" alt="冬シャン" class="product-img">
+                                <div class="product-title">
+                                    <p>トリートメントイン<br>シャンプー
+                                        <span class="season">冬</span>
+                                        <span class="aroma">サンダルウッド&ジャスミン</span>
+                                    </p>
+                                </div>
+                                <span class="price">2500円</span>
+                                <button class="button add-cart">
+                                    カートに入れる
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <section class="border">
+                <img src="img/border.png">
+            </section>
+            <section>
+                <div id="bathsalt">
+                    <div class="product">
+                        <h3>bath salt</h3>
+                    </div>
+                    <div class="productinnerwrap">
+                        <div class="productimg">
+                            <img src="img/bathsalt.jpg" alt="">
+                        </div>
+                        <div class="productinnerwraptext">
+                            <h4>本体300g<span>1500円</h4>
+                            <h5>お湯に溶かすとアロマの香りが広がり<br>
+                                癒し効果がより高まります。<br>
+                                ナトリウムやマグネシウムに<br>
+                                含まれているミネラルには<br>
+                                保湿効果もありしっとりとした<br>
+                                肌に仕上がります。</h5>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="item">
+                            <img src="img/春ソルト.jpeg" alt="春ソルト" class="product-img">
+                            <div class="product-title">
+                                <p>バスソルト
+                                    <span class="season">春</span>
+                                    <span class="aroma">ラベンダー&スイートオレンジ</span>
+                                </p>
+                            </div>
+                            <span class="price">1500円</span>
+                            <button class="button add-cart">
+                                カートに入れる
+                            </button>
+                        </div>
+                        <div class="item">
+                            <img src="img/夏ソルト.jpeg" alt="夏ソルト" class="product-img">
+                            <div class="product-title">
+                                <p>バスソルト
+                                    <span class="season">夏</span>
+                                    <span class="aroma">ペパーミント&ローズマリー</span>
+                                </p>
+                            </div>
+                            <span class="price">1500円</span>
+                            <button class="button add-cart">
+                                カートに入れる
+                            </button>
+                        </div>
+                        <div class="item">
+                            <img src="img/秋ソルト.jpeg" alt="秋ソルト" class="product-img">
+                            <div class="product-title">
+                                <p>バスソルト
+                                    <span class="season">秋</span>
+                                    <span class="aroma">ベルガモット&カモミール</span>
+                                </p>
+                            </div>
+                            <span class="price">1500円</span>
+                            <button class="button add-cart">
+                                カートに入れる
+                            </button>
+                        </div>
+                        <div class="item">
+                            <img src="img/冬ソルト.jpeg" alt="冬ソルト" class="product-img">
+                            <div class="product-title">
+                                <p>バスソルト
+                                    <span class="season">冬</span>
+                                    <span class="aroma">サンダルウッド&ジャスミン</span>
+                                </p>
+                            </div>
+                            <span class="price">1500円</span>
+                            <button class="button add-cart">
+                                カートに入れる
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="img/quatrelogo.svg" alt="quatrelogo">
+                </a>
+            </div>
+            <nav>
+                <ul class="footer-nav">
+                    <li><a href="index.html" class="footer-li">TOP</a></li>
+                    <li><a href="about.html" class="footer-li">ABOUT US</a></li>
+                    <li><a href="product.html" class="footer-li">PRODUCT</a></li>
+                    <li><a href="contact.html" class="footer-li">
+                            <img src="img/contact.svg" alt="contact" class="nav-contact"></a></li>
+                </ul>
+            </nav>
+            <p class="footer-copyright">@ 2023 Quatre All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="js/quatre.js"></script>
+</body>

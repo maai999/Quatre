@@ -1,0 +1,1604 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    color: #333333;
+    background: #e5e5e5;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    margin: 2.5rem;
+}
+
+.innerwrap2 {
+    padding-top: 5rem;
+}
+
+a,
+h2,
+h3,
+span {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+}
+
+th,
+td,
+label {
+    font-family: 'Noto Serif JP', serif;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px #333333;
+    color: transparent;
+    padding: 1rem;
+    letter-spacing: 0.1em;
+}
+
+h4,
+h5 {
+    font-family: 'Noto Serif JP', serif;
+    padding: 0.75rem;
+    line-height: 1.5;
+}
+
+summary,
+.question p,
+.question h5 {
+    line-height: 1.75;
+    text-align: left;
+    font-family: 'Noto Serif JP', serif;
+}
+
+p,
+h3 {
+    font-family: 'Noto Serif JP', serif;
+    padding: 0.625rem;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    scroll-padding-top: 5rem;
+    /* 固定ヘッダの高さ分 */
+}
+
+@media screen and (min-width: 520px) {
+    html {
+        scroll-padding-top: 6.25rem;
+        /* 固定ヘッダの高さ分 */
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .innerwrap2 {
+        padding-top: 6.25rem;
+    }
+
+    section {
+        margin: 4rem;
+    }
+
+    p,
+    h3 {
+        padding: 0.75rem;
+        text-align: center;
+    }
+
+    summary,
+    .question p,
+    .question h5 {
+        line-height: 2;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    html {
+        scroll-padding-top: 7.5rem;
+        /* 固定ヘッダの高さ分 */
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    section {
+        margin: 8rem;
+    }
+
+    p {
+        padding: 2rem;
+    }
+
+    summary,
+    .question p,
+    .question h5 {
+        line-height: 2.5;
+        text-align: left;
+    }
+}
+
+/* ヘッダー */
+.header {
+    position: fixed;
+    display: block;
+    background-color: #e5e5e5;
+    width: auto;
+    height: 80px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.450);
+}
+
+.header_inner {
+    /* ２０px */
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+    position: relative;
+}
+
+/* ヘッダーロゴ */
+.header_logo {
+    max-width: 100px;
+}
+
+.header_logo:hover {
+    opacity: 0.8;
+}
+
+
+/* ヘッダーナビ */
+.header_nav {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    background-color: #e5e5e5b5;
+    transition: ease .4s;
+    display: flex;
+}
+
+.nav_items {
+    margin: auto;
+}
+
+.nav-items_item {
+    cursor: pointer;
+    position: relative;
+    height: auto;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.125em;
+    margin: 0.625rem auto;
+}
+
+
+/* ナビリンク ハンバーガーメニュー*/
+.nav-items_item a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.625rem 0;
+}
+
+.nav-items_item a::after {
+    display: block;
+    margin-top: 0.5rem;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: lighter;
+}
+
+.nav-about a::after {
+    content: "(Quatreについて)";
+}
+
+.nav-product a::after {
+    content: "(商品一覧)";
+}
+
+.nav-contact a::after {
+    content: "(お問い合せ/fax)";
+}
+
+.nav-cart a::after {
+    content: "(ショッピングカート)";
+}
+
+.nav-items_item:last-child a {
+    margin-bottom: 0;
+}
+
+.nav-contact img,
+.sp img,
+.nav-cart img {
+    max-width: 35px;
+}
+
+.sp img {
+    float: right;
+    margin: 0 0 0 auto;
+}
+
+.pc img {
+    display: none;
+}
+
+/* ハンバーガーメニュー */
+.header_hamburger {
+    width: 40px;
+    height: auto;
+}
+
+.hamburger {
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 98;
+    cursor: pointer;
+}
+
+/* ハンバーガーメニュー線 */
+.hamburger span {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    height: 1px;
+    background-color: #333333;
+    transition: ease .4s;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+    margin: 0.5rem 0;
+}
+
+
+.hamburger span:nth-child(3) {
+    top: 0;
+}
+
+/* ハンバーガーメニュークリック後*/
+.header_nav.active {
+    transform: translateX(0);
+}
+
+.hamburger.active span:nth-child(1) {
+    top: 5px;
+    transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    top: -13px;
+    transform: rotate(-45deg);
+}
+
+/* トップページ */
+
+
+/* スライドショー */
+.slideshow-container {
+    margin-top: 5rem;
+}
+
+.slideshow-container img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+}
+
+/* メイン */
+.box {
+    margin: 0;
+}
+
+.content .box {
+    position: relative;
+    box-sizing: border-box;
+    margin: 1.5rem;
+}
+
+.box img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+}
+
+.box-box {
+    position: static;
+    background: #e5e5e5;
+    width: 100%;
+}
+
+.box-box p {
+    text-align: center;
+    font-size: 0.65rem;
+    line-height: 3;
+    white-space: nowrap;
+}
+
+.button {
+    display: block;
+    background: #e5e5e5;
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin: 1.5rem auto 0;
+    padding: 0.5rem;
+    border: 0.7px solid #333333;
+    border-radius: 10px 10px 10px 10px;
+    transition: 0.2s;
+}
+
+.button:hover {
+    color: #333333;
+    background: #c5c5c5;
+}
+
+.border img {
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+    row-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    background: #e5e5e5;
+    margin: 1rem auto;
+}
+
+.item {
+    border: 0.5px solid #e5e5e5;
+    box-sizing: border-box;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+.product-title {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.product-title p {
+    font-size: 0.7rem;
+    line-height: 1.6;
+}
+
+.season {
+    display: block;
+    font-size: 0.85rem;
+    margin: 0.6rem 0;
+}
+
+.aroma {
+    font-size: 0.5rem;
+}
+
+
+.price {
+    display: block;
+    font-size: 1rem;
+}
+
+.item .button {
+    width: 80%;
+    font-size: 0.75rem;
+    margin: 1.25rem auto;
+    padding: 0.625rem;
+    cursor: pointer;
+}
+
+.product .button {
+    margin: 0.75rem auto;
+    margin-right: 0;
+    font-size: 0.625rem;
+    padding: 0.525rem;
+    width: 55%;
+}
+.toppagepng img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.link .button a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.link .button a::after {
+    position: absolute;
+    content: "";
+    top: 40%;
+    right: 6%;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+    transform: rotate(45deg);
+    transition: all .3s;
+}
+
+.link .button a:hover::after {
+    right: 4%;
+}
+
+.footer {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    background-color: #e5e5e5;
+    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.450);
+    padding: 0.75rem;
+}
+
+.footer-logo {
+    width: 50%;
+    height: auto;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.footer-li {
+    font-size: 0.75rem;
+    text-decoration: none;
+    margin: 0;
+}
+
+.footer .nav-contact {
+    width: 30px;
+}
+
+.footer-nav li:not(:last-of-type) .footer-li::after {
+    margin: 0.5rem;
+    content: "|";
+}
+
+.footer-copyright {
+    margin: 0 auto;
+    color: #333333;
+    font-size: 0.625rem;
+    margin-top: 1.25rem;
+}
+
+@media screen and (max-width: 320px) {
+    .product-title p {
+        font-size: 0.55rem;
+        line-height: 1.6;
+    }
+
+    .aroma {
+        font-size: 0.5rem;
+    }
+
+}
+
+@media screen and (min-width: 520px) {
+    .header {
+        height: 100px;
+    }
+
+    .header_hamburger {
+        width: 50px;
+        height: 100%;
+    }
+
+    .hamburger span:nth-child(2) {
+        margin: 9px 0;
+    }
+
+    .cart {
+        width: 400px;
+    }
+
+    .slideshow-container {
+        margin-top: 6.25rem;
+    }
+
+    .slideshow-container img {
+        width: 90vw;
+        margin: 0 auto;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .content {
+        margin: auto;
+    }
+
+    .content .box {
+        display: flex;
+        margin: 2rem;
+        align-items: start;
+        align-items: center;
+    }
+
+    .content .box img {
+        width: 50%;
+        height: auto;
+    }
+
+    .content .box-box {
+        background: #e5e5e5;
+        margin-left: 1rem;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-box p {
+        font-size: 0.6rem;
+    }
+
+    .button {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    .product-title p {
+        font-size: 0.65rem;
+        line-height: 1.6;
+    }
+
+    .aroma {
+        font-size: 0.5rem;
+    }
+
+    .product .button {
+        width: 30%;
+    }
+
+    .product .button a {
+        font-size: 0.75rem;
+    }
+
+    .link .button {
+        margin-bottom: 2rem;
+    }
+
+    .link .button a::after {
+        right: 25%;
+    }
+
+    .link .button a:hover::after {
+        right: 20%;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    .box-box p {
+        font-size: 0.8rem;
+    }
+
+    .product h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .header {
+        height: 120px;
+    }
+
+    .header_nav {
+        position: static;
+        transform: initial;
+        background-color: inherit;
+        height: inherit;
+        display: flex;
+        justify-content: end;
+        width: 45%;
+    }
+
+    .nav_items {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: initial;
+        justify-content: space-between;
+    }
+    
+    .nav-contact img,
+    .nav-cart img {
+        max-width: 50px;
+    }
+
+    .sp img {
+        display: none;
+    }
+
+    /* 線 */
+    .nav-items_item:before {
+        position: absolute;
+        content: "";
+        bottom: 0px;
+        width: 100%;
+        height: 2px;
+        background: #3E5570f5;
+        opacity: 0;
+    }
+
+    .nav-items_item:hover:before {
+        opacity: 0.5;
+    }
+    
+    .nav-items_item:nth-child(1){
+        margin-left: -10rem;
+    }
+
+    .nav-items_item a {
+        font-size: 1rem;
+    }
+
+
+    .hamburger {
+        display: none;
+    }
+
+    .slideshow-container {
+        margin-top: 7.5rem;
+    }
+
+    .slideshow-container img {
+        width: 90vw;
+        height: auto;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    .box-box p {
+        font-size: 1rem;
+    }
+
+    .button {
+        width: 70%;
+        padding: 1rem;
+    }
+
+    .button a {
+        font-size: 1.25rem;
+    }
+
+    .product h3 {
+        font-size: 1.7rem;
+    }
+
+    .grid {
+        margin: 3rem auto;
+    }
+
+    .item {
+        width: 95%;
+        height: auto;
+    }
+
+    .product-title p {
+        font-size: 0.7rem;
+        line-height: 1.6;
+    }
+
+    .aroma {
+        font-size: 0.6rem;
+        line-height: 2.5;
+    }
+
+    .product .button {
+        width: 30%;
+        padding: 0.75rem;
+    }
+
+    .product .button a {
+        font-size: 1.5rem;
+    }
+
+    .link .button a {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+
+    .link .button a::after {
+        right: 20%;
+    }
+
+    .link .button a:hover::after {
+        right: 15%;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .product h3 {
+        font-size: 1.7rem;
+    }
+
+    .product-title p {
+        font-size: 0.65rem;
+        line-height: 1.6;
+    }
+
+    .aroma {
+        font-size: 0.65rem;
+        line-height: 2.5;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .product-title p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .aroma {
+        font-size: 0.8rem;
+        line-height: 2.5;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .box-box p {
+        font-size: 1.5rem;
+        line-height: 5;
+    }
+
+    .product h3 {
+        font-size: 1.9rem;
+    }
+
+    .product-title p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .aroma {
+        font-size: 0.75rem;
+        line-height: 2.5;
+    }
+
+    .aroma br:nth-child(1) {
+        display: none;
+    }
+
+    .link .button a::after {
+        right: 30%;
+    }
+
+    .link .button a:hover::after {
+        right: 25%;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .box-box p {
+        font-size: 2rem;
+        line-height: 5;
+    }
+
+    .product h3 {
+        font-size: 2rem;
+    }
+
+    .item {
+        width: 90%;
+        height: auto;
+    }
+
+    .product-title p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .season {
+        font-size: 1.5rem;
+    }
+
+    .aroma {
+        font-size: 1.2rem;
+        line-height: 2.5;
+    }
+}
+
+/* アパウトページ */
+.aboutus-html p {
+    font-size: 0.7rem;
+    line-height: 3;
+}
+.conceptjpg img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.look div,
+.aroma div,
+.feel div {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    align-items: center;
+    margin-top: 0.9rem;
+}
+
+.look h3,
+.aroma h3,
+.feel h3 {
+    font-size: 1.25rem;
+    padding: 1rem;
+    letter-spacing: 0.5em;
+}
+
+.look p,
+.aroma p,
+.feel p {
+    font-size: 0.55rem;
+    text-align: left;
+    line-height: 3;
+}
+.look img,
+    .aroma img,
+    .feel img {
+        width: 40%;
+    }
+
+.look span:nth-of-type(1) {
+    color: #ee8170;
+}
+
+.look span:nth-of-type(2) {
+    color: #39d441;
+}
+
+.look span:nth-of-type(3) {
+    color: #e29d26;
+}
+
+.look span:nth-of-type(4) {
+    color: #38acda;
+}
+
+
+@media screen and (min-width: 520px) {
+    .aboutus-html p {
+        font-size: 1rem;
+        line-height: 2.5;
+        font-weight: lighter;
+    }
+
+    .look div,
+    .aroma div,
+    .feel div {
+        margin-top: 1.5rem;
+    }
+
+    .look h3,
+    .aroma h3,
+    .feel h3 {
+        font-size: 1.75rem;
+        padding: 2rem;
+        letter-spacing: 0.5em;
+    }
+
+    .look p,
+    .aroma p,
+    .feel p {
+        font-size: 1rem;
+        text-align: left;
+        line-height: 2.6;
+    }
+
+    .look span {
+        font-size: 1.5rem;
+    }
+
+    .look img,
+    .aroma img,
+    .feel img {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 569px) {
+    .aboutus-html p {
+        font-size: 1.25rem;
+    }
+
+    .look h3,
+    .aroma h3,
+    .feel h3 {
+        font-size: 2rem;
+    }
+
+    .look p,
+    .aroma p,
+    .feel p {
+        font-size: 1rem;
+        line-height: 2.25;
+    }
+
+    .look span {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .aboutus-html p {
+        font-size: 1.75rem;
+        font-weight: lighter;
+        line-height: 3;
+    }
+
+    .look div,
+    .aroma div,
+    .feel div {
+        margin-top: 2rem;
+    }
+
+    .look h3,
+    .aroma h3,
+    .feel h3 {
+        font-size: 2.5rem;
+    }
+
+    .look p,
+    .aroma p,
+    .feel p {
+        font-size: 1.6rem;
+        line-height: 2.5;
+    }
+
+    .look span {
+        font-size: 2rem;
+    }
+
+    .look img,
+    .aroma img,
+    .feel img {
+        width: 40%;
+    }
+}
+
+/* プロダクトページ */
+.sp {
+    display: flex;
+    float: right;
+    width: 50%;
+    margin-right: 0.625rem;
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 1.875rem;
+    background: #d7d7d7;
+    transition: ease .4s;
+    box-shadow: -4px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    overflow: auto;
+    z-index: 9999;
+}
+
+.cart.active {
+    right: 0;
+
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 2rem;
+    font-weight: 600;
+}
+
+.cart-box {
+    display: grid;
+    grid-template-columns: 40% 50% 0%;
+    align-items: center;
+    gap: 20px;
+    margin: 1.25rem 0;
+    position: relative;
+}
+
+.cart-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.detail-box {
+    display: grid;
+    row-gap: 1px;
+}
+
+.cart-product-title {
+    font-size: 0.55rem;
+    text-align: center;
+    white-space: pre;
+    line-height: 2;
+    padding: 0.625rem;
+}
+
+.cart-price {
+    font-weight: normal;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    margin-top: 1.6rem;
+    margin-left: 1.5rem;
+}
+
+.cart-quantity {
+    border: 0.5px solid #333333;
+    outline-color: #333333;
+    width: 80px;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.75rem 0;
+    margin-left: 1rem;
+}
+
+.cart-box .cart-remove {
+    width: 13%;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+    border: 0.75px solid #d7d7d7;
+    padding: 0.25rem;
+}
+
+.cart-remove:hover {
+    border: 0.75px solid #333333;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    border-top: 1px solid #333333;
+}
+
+.total-title {
+    font-size: 1.25rem;
+    padding: 0.7rem;
+    font-weight: 400;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.total-price {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.btn-buy {
+    display: flex;
+    margin: 1.75rem auto;
+    padding: 1rem;
+    border: none;
+    background: #f5f5f5;
+    color: #333333;
+    cursor: pointer;
+}
+
+.btn-buy:hover {
+    background: #333333;
+    color: #f5f5f5;
+}
+
+#close-cart {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+.productinnerwrap {
+    margin-top: 1.75rem;
+    display: block;
+    text-align: center;
+}
+
+.product h3 {
+    line-height: 1.5;
+}
+
+.productimg img {
+    width: 100%;
+}
+
+.productinnerwraptext {
+    text-align: center;
+}
+
+.productinnerwraptext h5 {
+    font-size: 0.7rem;
+    line-height: 2;
+}
+
+.productinnerwraptext span {
+    margin-left: 1rem;
+}
+
+.item .button {
+    font-size: 0.5rem;
+}
+
+@media screen and (min-width: 520px) {
+    .cart {
+        width: 450px;
+    }
+
+    .productinnerwrap {
+        display: flex;
+        align-items: center;
+        margin: 2rem auto 3rem;
+    }
+
+    .productimg {
+        width: 50%;
+        margin: 0 0 auto 0;
+    }
+
+    .productinnerwraptext {
+        white-space: nowrap;
+        text-align: center;
+        margin: 0 0 0 auto;
+    }
+
+    .productinnerwraptext span {
+        margin-left: 2rem;
+    }
+
+    .productinnerwraptext h5 {
+        line-height: 2;
+    }
+}
+
+@media screen and (min-width:960px) {
+    .productimg {
+        width: 50%;
+    }
+
+    .productinnerwraptext span {
+        margin-left: 4rem;
+    }
+
+    .productinnerwraptext h5 {
+        line-height: 2.5;
+    }
+
+    .productinnerwraptext h4,
+    span,
+    .productinnerwraptext h5 {
+        font-size: 1rem;
+    }
+
+    .item .button {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+    }
+
+}
+
+@media screen and (min-width: 1300px) {
+
+    .productinnerwraptext h4,
+    span,
+    .productinnerwraptext h5 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+
+    .productinnerwraptext h4,
+    span,
+    .productinnerwraptext h5 {
+        font-size: 2rem;
+    }
+}
+
+/* コンタクトページ */
+.questionaria span {
+    font-size: 1rem;
+}
+
+span.slash:not(:first-child):before {
+    content: ' / ';
+    margin: 1rem;
+}
+
+#page-link {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    padding: 1rem 0;
+}
+
+#page-link li a {
+    font-size: 0.45rem;
+}
+
+#page-link li a::before {
+    content: '▼';
+    font-size: 0.8rem;
+    padding: 0.1rem;
+    color: #a3a3a3;
+}
+
+.question-list {
+    margin: 2rem 0;
+}
+
+.question-list h3 {
+    font-size: 0.9rem;
+}
+
+.question {
+    margin-bottom: 7px;
+    border: 1px solid #8e8e8e;
+    box-shadow: 0 4px 4px #a2a2a266;
+}
+
+.question summary {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1rem 2.5rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    border-bottom: 0.5px dotted #333333;
+}
+
+.question summary:hover {
+    cursor: pointer;
+    background: #f5f5f5;
+}
+
+.question summary::before,
+.question p::before {
+    position: absolute;
+    left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+}
+
+.question summary::before {
+    color: #57799a;
+    content: "Q";
+}
+
+.question p {
+    position: relative;
+    opacity: 0;
+    margin: 0;
+    padding: 1rem 2rem;
+    font-size: 0.7rem;
+}
+
+.question h5 {
+    font-size: 0.65rem;
+    margin-left: 1.5rem;
+}
+
+.question[open] p {
+    opacity: 1;
+}
+
+.question p::before {
+    color: #d24c4c;
+    content: "A";
+}
+
+.form {
+    background: #d7d7d7;
+    padding: 1.25rem 1.25rem;
+}
+
+.form h4 {
+    font-size: 0.8em;
+    line-height: 2;
+}
+
+.form span {
+    font-size: 0.75em;
+    float: right;
+    color: #d24c4c;
+}
+
+.contact-inner {
+    margin: 2rem 0;
+}
+
+.contact-table {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.table-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02rem;
+    width: 100%;
+}
+
+.table-list th {
+    margin-bottom: 1rem;
+}
+
+.input-area {
+    letter-spacing: 0.05em;
+    padding: 0 0.75rem;
+    border: none;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0.5px solid #333333;
+}
+
+.table-list td {
+    font-size: 0.7rem;
+    width: 100%;
+}
+
+input::placeholder {
+    color: #3333337f;
+}
+
+label {
+    font-size: 0.6rem;
+    font-weight: normal;
+}
+
+textarea {
+    border: none;
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    font-size: 0, 75rem;
+    border: 0.5px solid #333333;
+    resize: vertical;
+    /* 横方向のみサイズを固定する */
+}
+
+textarea::placeholder {
+    color: #3333337f;
+    font-size: 1rem;
+}
+
+input[type="text"] {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border: 0.5px solid #333333;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .5s;
+    padding: 0.5rem 3rem;
+}
+
+.submit-button:hover {
+    background: #d7d7d7;
+    border: 0.5px solid #333333;
+}
+
+@media screen and (min-width: 520px) {
+    .questionaria span {
+        font-size: 1.25rem;
+    }
+
+    #page-link {
+        border-top: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+        padding: 1rem 0;
+    }
+
+    #page-link li a {
+        font-size: 0.75rem;
+    }
+
+    .question-list h3 {
+        font-size: 1rem;
+    }
+
+    .question summary {
+        font-size: 0.9rem;
+    }
+
+    .question p {
+        font-size: 0.9rem
+    }
+
+    .question h5 {
+        font-size: 0.8rem;
+    }
+
+    .form {
+        padding: 3rem;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    .table-list td {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .questionaria span {
+        font-size: 2rem;
+    }
+
+    #page-link {
+        border-top: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+        padding: 2rem 0;
+    }
+
+    #page-link li a {
+        font-size: 1.25rem;
+    }
+
+    .question-list h3 {
+        font-size: 1.7rem;
+    }
+
+    .question summary {
+        font-size: 1.5rem;
+    }
+
+    .question p {
+        font-size: 1.4rem
+    }
+
+    .question h5 {
+        font-size: 1.35rem;
+    }
+
+    .question summary::before,
+    .question p::before {
+        font-size: 1.5rem;
+    }
+
+    .contact-table {
+        width: 100%;
+    }
+
+    .form h4 {
+        font-size: 1.25em;
+    }
+
+    .table-list {
+        display: flex;
+        justify-content: space-between;
+        letter-spacing: 0.05em;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .table-list-address {
+        flex-wrap: wrap;
+    }
+
+    .input-area {
+        letter-spacing: 0.05em;
+        padding: 0.75rem;
+        border: none;
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        border: 1px solid #333333;
+    }
+
+    .table-list td {
+        font-size: 13px;
+        width: calc(100% - 300px);
+    }
+
+    input::placeholder {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    textarea {
+        border: none;
+        width: 100%;
+        height: 150px;
+        padding: 1rem;
+        font-size: 0.75rem;
+        border: 1px solid #333333;
+        resize: vertical;
+    }
+
+    textarea::placeholder {
+        font-size: 12px;
+    }
+
+    input[type="text"] {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .contact-area .text {
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .submit-button {
+        font-size: 1.4rem;
+        padding: 1.5rem 6rem;
+    }
+}
